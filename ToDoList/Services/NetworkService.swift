@@ -11,10 +11,20 @@ struct NetworkService {
     func getToDo() {
         let url = URL(string: "\(URL_BASE)")!
 
-        let task = session.dataTask(with: url) { (data, _, _) in
+        let task = session.dataTask(with: url) { (data, response , error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
-                return 
+                return
+            }
+            guard let data = data, let response = response as? HTTPURLResponse else {
+                debugPrint("Invalid data or response")
+                return
+            }
+            
+            if response.statusCode == 200 {
+                // successful result (todo)
+            } else {
+                // show error to the user
             }
         }
         task.resume()
