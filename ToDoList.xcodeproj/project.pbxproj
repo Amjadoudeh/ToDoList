@@ -17,6 +17,8 @@
 		D052E09C28742521009B0C4B /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E09B28742521009B0C4B /* ToDoListUITests.swift */; };
 		D052E09E28742521009B0C4B /* ToDoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E09D28742521009B0C4B /* ToDoListUITestsLaunchTests.swift */; };
 		D052E0E82882EAD6009B0C4B /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0E72882EAD6009B0C4B /* ToDoCell.swift */; };
+		D052E0EA28830160009B0C4B /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0E928830160009B0C4B /* ToDo.swift */; };
+		D052E0EC28830214009B0C4B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0EB28830214009B0C4B /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		D052E09B28742521009B0C4B /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		D052E09D28742521009B0C4B /* ToDoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D052E0E72882EAD6009B0C4B /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		D052E0E928830160009B0C4B /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		D052E0EB28830214009B0C4B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 		D052E0E42882EA5F009B0C4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D052E0E928830160009B0C4B /* ToDo.swift */,
+				D052E0EB28830214009B0C4B /* APIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,9 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D052E07F2874251F009B0C4B /* ToDoViewController.swift in Sources */,
+				D052E0EA28830160009B0C4B /* ToDo.swift in Sources */,
 				D052E07B2874251F009B0C4B /* AppDelegate.swift in Sources */,
 				D052E07D2874251F009B0C4B /* SceneDelegate.swift in Sources */,
 				D052E0E82882EAD6009B0C4B /* ToDoCell.swift in Sources */,
+				D052E0EC28830214009B0C4B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
