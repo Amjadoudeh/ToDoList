@@ -35,6 +35,41 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mrN-40-nQe">
                                 <rect key="frame" x="20" y="201" width="374" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="TMj-ZA-fEM">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TMj-ZA-fEM" id="2cY-PJ-zgI">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-1y-O82">
+                                                    <rect key="frame" x="296" y="24" width="58" height="58"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="ITx-ts-Nv8"/>
+                                                        <constraint firstAttribute="height" constant="58" id="pvS-1P-3Gw"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy a dozen of eggs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI6-Db-G8G">
+                                                    <rect key="frame" x="20" y="24" width="610" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="leading" secondItem="2cY-PJ-zgI" secondAttribute="leadingMargin" id="0Ev-sn-djU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HI6-Db-G8G" secondAttribute="bottom" constant="13" id="3VW-VR-Iwy"/>
+                                                <constraint firstItem="q8k-1y-O82" firstAttribute="centerX" secondItem="HI6-Db-G8G" secondAttribute="centerX" id="OcA-gD-n95"/>
+                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="top" secondItem="2cY-PJ-zgI" secondAttribute="topMargin" constant="13" id="Pvl-Xj-Iqx"/>
+                                                <constraint firstItem="q8k-1y-O82" firstAttribute="top" secondItem="2cY-PJ-zgI" secondAttribute="topMargin" constant="13" id="WCK-NB-VgH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="q8k-1y-O82" secondAttribute="bottom" constant="13" id="jgh-gw-V24"/>
+                                                <constraint firstItem="q8k-1y-O82" firstAttribute="trailing" secondItem="2cY-PJ-zgI" secondAttribute="trailingMargin" id="kO8-C2-GLI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LO3-3O-0qY">
                                 <rect key="frame" x="349" y="44" width="45" height="31"/>
@@ -43,6 +78,9 @@
                                     <constraint firstAttribute="height" constant="31" id="Pov-YA-XJg"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="addToDoItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5W-8p-Dix"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,6 +100,10 @@
                             <constraint firstItem="rpI-QZ-7O4" firstAttribute="top" secondItem="eBT-dr-3Wp" secondAttribute="bottom" constant="20" id="yfh-gB-pXb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="prioritySegment" destination="rpI-QZ-7O4" id="8tO-Z2-F5q"/>
+                        <outlet property="toDoItemText" destination="eBT-dr-3Wp" id="Z79-8a-iC2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +113,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
