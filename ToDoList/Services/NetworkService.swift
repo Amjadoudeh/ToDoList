@@ -8,7 +8,7 @@ struct NetworkService {
 
     let session = URLSession(configuration: .default)
 
-    func getToDo() {
+    func getToDos(onSeccess: @escaping (ToDos) -> Void) {
         let url = URL(string: "\(URL_BASE)")!
 
         let task = session.dataTask(with: url) { (data, response , error) in
@@ -24,7 +24,7 @@ struct NetworkService {
                 if response.statusCode == 200 {
                     // handle success
                     let items = try JSONDecoder().decode(ToDos.self, from: data)
-                    print(items)
+                    onSeccess(items)
                 } else {
                     // handle error
                     let err = try JSONDecoder().decode(APIError.self, from: data)

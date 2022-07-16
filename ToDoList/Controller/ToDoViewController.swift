@@ -9,7 +9,9 @@ class ToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NetworkService.shared.getToDo()
+        NetworkService.shared.getToDos { (todos) in
+            debugPrint(todos)
+        }
     }
 
     @IBAction func addToDoItem(_ sender: Any) {
