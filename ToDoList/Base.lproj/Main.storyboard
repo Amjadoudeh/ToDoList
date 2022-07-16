@@ -50,11 +50,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-1y-O82">
-                                                    <rect key="frame" x="329" y="30.5" width="45" height="45"/>
+                                                    <rect key="frame" x="334" y="35.5" width="40" height="35"/>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="45" id="ITx-ts-Nv8"/>
-                                                        <constraint firstAttribute="height" constant="45" id="pvS-1P-3Gw"/>
+                                                        <constraint firstAttribute="width" constant="40" id="ITx-ts-Nv8"/>
+                                                        <constraint firstAttribute="height" constant="35" id="pvS-1P-3Gw"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

@@ -1,5 +1,9 @@
 import Foundation
 
+/// we can replace and shortcut the onSeccess and onError as the following:
+/// typealias APIError = (String) -> Void
+/// typealias APISuccess = (ToDos) -> Void
+
 struct NetworkService {
     static let shared = NetworkService()
     
@@ -8,7 +12,7 @@ struct NetworkService {
     
     let session = URLSession(configuration: .default)
     
-    func getToDos(onSeccess: @escaping (ToDos) -> Void) {
+    func getToDos(onSuccess: @escaping (ToDos) -> Void, onError: @escaping (String) -> Void) {
         let url = URL(string: "\(URL_BASE)")!
         
         let task = session.dataTask(with: url) { (data, response , error) in
@@ -19,20 +23,21 @@ struct NetworkService {
                     return
                 }
                 guard let data = data, let response = response as? HTTPURLResponse else {
-                    debugPrint("Invalid data or response")
+                    onError("Invalid data or response")
                     return
                 }
                 do {
                     if response.statusCode == 200 {
                         // handle success
                         let items = try JSONDecoder().decode(ToDos.self, from: data)
-                        onSeccess(items)
+                        onSuccess(items)
                     } else {
                         // handle error
                         let err = try JSONDecoder().decode(APIError.self, from: data)
+                        onError(err.message)
                     }
                 } catch {
-                    debugPrint(error.localizedDescription)
+                    onError(error.localizedDescription)
                 }
             }
         }

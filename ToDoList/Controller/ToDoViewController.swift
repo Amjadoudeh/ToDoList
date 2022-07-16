@@ -1,7 +1,7 @@
 import UIKit
 
 class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
- 
+    
     @IBOutlet weak var toDoItemText: UITextField!
     @IBOutlet weak var prioritySegment: UISegmentedControl!
     @IBOutlet weak var toDoTable: UITableView!
@@ -13,12 +13,14 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         toDoTable.delegate = self
         toDoTable.dataSource = self
         getToDos()
-       
+        
     }
     func getToDos() {
         NetworkService.shared.getToDos { (todos) in
             self.todos = todos.items
             self.toDoTable.reloadData()
+        } onError: { (errorMessage) in
+            
         }
     }
     
@@ -41,7 +43,7 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-
+    
     @IBAction func addToDoItem(_ sender: Any) {
     }
 }
