@@ -12,7 +12,10 @@ struct NetworkService {
         let url = URL(string: "\(URL_BASE)")!
 
         let task = session.dataTask(with: url) { (data, _, _) in
-            debugPrint(data)
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return 
+            }
         }
         task.resume()
     }
