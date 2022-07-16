@@ -2,6 +2,10 @@ import UIKit
 
 class ToDoCell: UITableViewCell {
 
+    @IBOutlet weak var itemLabel: UILabel!
+
+    @IBOutlet weak var priorityView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
