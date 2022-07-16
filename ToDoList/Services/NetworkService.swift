@@ -20,12 +20,19 @@ struct NetworkService {
                 debugPrint("Invalid data or response")
                 return
             }
-            
-            if response.statusCode == 200 {
-                // successful result (todo)
-            } else {
-                // show error to the user
+            do {
+                if response.statusCode == 200 {
+                    // handle success
+                    let items = try JSONDecoder().decode(ToDos.self, from: data)
+                    print(items)
+                } else {
+                    // handle error
+                    let err = try JSONDecoder().decode(APIError.self, from: data)
+                }
+            } catch {
+                debugPrint(error.localizedDescription)
             }
+            
         }
         task.resume()
     }
