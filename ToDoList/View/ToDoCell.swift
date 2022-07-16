@@ -3,18 +3,20 @@ import UIKit
 class ToDoCell: UITableViewCell {
 
     @IBOutlet weak var itemLabel: UILabel!
-
     @IBOutlet weak var priorityView: UIView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    func updateCell(todo: ToDo) {
+        itemLabel.text = todo.item
+        
+        switch todo.priority {
+        case 1:
+            priorityView.backgroundColor = UIColor.yellow
+            break
+        case 2:
+            priorityView.backgroundColor = UIColor.orange
+            break
+        default:
+            priorityView.backgroundColor = UIColor.red
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

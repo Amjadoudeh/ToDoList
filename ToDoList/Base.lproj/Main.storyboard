@@ -43,29 +43,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-1y-O82">
-                                                    <rect key="frame" x="296" y="24" width="58" height="58"/>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="58" id="ITx-ts-Nv8"/>
-                                                        <constraint firstAttribute="height" constant="58" id="pvS-1P-3Gw"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy a dozen of eggs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI6-Db-G8G">
-                                                    <rect key="frame" x="20" y="24" width="610" height="58"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="20" y="41" width="178" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-1y-O82">
+                                                    <rect key="frame" x="329" y="30.5" width="45" height="45"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="ITx-ts-Nv8"/>
+                                                        <constraint firstAttribute="height" constant="45" id="pvS-1P-3Gw"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="leading" secondItem="2cY-PJ-zgI" secondAttribute="leadingMargin" id="0Ev-sn-djU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HI6-Db-G8G" secondAttribute="bottom" constant="13" id="3VW-VR-Iwy"/>
-                                                <constraint firstItem="q8k-1y-O82" firstAttribute="centerX" secondItem="HI6-Db-G8G" secondAttribute="centerX" id="OcA-gD-n95"/>
-                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="top" secondItem="2cY-PJ-zgI" secondAttribute="topMargin" constant="13" id="Pvl-Xj-Iqx"/>
-                                                <constraint firstItem="q8k-1y-O82" firstAttribute="top" secondItem="2cY-PJ-zgI" secondAttribute="topMargin" constant="13" id="WCK-NB-VgH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="q8k-1y-O82" secondAttribute="bottom" constant="13" id="jgh-gw-V24"/>
-                                                <constraint firstItem="q8k-1y-O82" firstAttribute="trailing" secondItem="2cY-PJ-zgI" secondAttribute="trailingMargin" id="kO8-C2-GLI"/>
+                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="centerY" secondItem="2cY-PJ-zgI" secondAttribute="centerY" id="3dX-J2-plm"/>
+                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="centerY" secondItem="q8k-1y-O82" secondAttribute="centerY" id="8CN-IG-fnd"/>
+                                                <constraint firstItem="HI6-Db-G8G" firstAttribute="leading" secondItem="2cY-PJ-zgI" secondAttribute="leadingMargin" id="XjY-Q8-whS"/>
+                                                <constraint firstItem="q8k-1y-O82" firstAttribute="trailing" secondItem="2cY-PJ-zgI" secondAttribute="trailingMargin" constant="20" id="ZJ1-We-Ay4"/>
+                                                <constraint firstItem="q8k-1y-O82" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HI6-Db-G8G" secondAttribute="trailing" constant="8" symbolic="YES" id="c4M-5B-dnb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -107,6 +105,7 @@
                     <connections>
                         <outlet property="prioritySegment" destination="rpI-QZ-7O4" id="8tO-Z2-F5q"/>
                         <outlet property="toDoItemText" destination="eBT-dr-3Wp" id="Z79-8a-iC2"/>
+                        <outlet property="toDoTable" destination="mrN-40-nQe" id="nkT-nZ-ksC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
