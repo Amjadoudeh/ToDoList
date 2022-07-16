@@ -1,4 +1,5 @@
 import Foundation
+/// Codable has both  => Decodable and Encodable
 struct ToDos: Codable {
     let items: Array<ToDo>
 }

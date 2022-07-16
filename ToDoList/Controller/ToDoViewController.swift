@@ -14,13 +14,20 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         toDoTable.dataSource = self
         getToDos()
         
+        NetworkService.shared.addToDo(todo: ToDo(item: "Test", priority: 1), onSuccess: { (todos) in
+            self.todos = todos.items
+            self.toDoTable.reloadData()
+        }) { (errorMessage) in
+            debugPrint(errorMessage)
+        }
+        
     }
     func getToDos() {
         NetworkService.shared.getToDos { (todos) in
             self.todos = todos.items
             self.toDoTable.reloadData()
         } onError: { (errorMessage) in
-            
+            debugPrint(errorMessage)
         }
     }
     
