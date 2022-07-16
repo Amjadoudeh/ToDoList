@@ -12,6 +12,7 @@ struct NetworkService {
         let url = URL(string: "\(URL_BASE)")!
         
         let task = session.dataTask(with: url) { (data, response , error) in
+            /// Grand Central Dispatch
             DispatchQueue.main.async {
                 if let error = error {
                     debugPrint(error.localizedDescription)
