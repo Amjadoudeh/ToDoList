@@ -10,13 +10,13 @@ class ToDoCell: UITableViewCell {
         
         switch todo.priority {
         case 1:
-            priorityView.backgroundColor = UIColor.yellow
-            break
-        case 2:
             priorityView.backgroundColor = UIColor.orange
             break
-        default:
+        case 2:
             priorityView.backgroundColor = UIColor.red
+            break
+        default:
+            priorityView.backgroundColor = UIColor.yellow
         }
     }
 }

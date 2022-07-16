@@ -13,15 +13,8 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         toDoTable.delegate = self
         toDoTable.dataSource = self
         getToDos()
-        
-        NetworkService.shared.addToDo(todo: ToDo(item: "Test", priority: 1), onSuccess: { (todos) in
-            self.todos = todos.items
-            self.toDoTable.reloadData()
-        }) { (errorMessage) in
-            debugPrint(errorMessage)
-        }
-        
     }
+    
     func getToDos() {
         NetworkService.shared.getToDos { (todos) in
             self.todos = todos.items
@@ -52,5 +45,16 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func addToDoItem(_ sender: Any) {
+        guard let toDoItem = toDoItemText.text else { return }
+        
+        let todo = ToDo(item: toDoItem, priority: prioritySegment.selectedSegmentIndex)
+        
+        NetworkService.shared.addToDo(todo: todo, onSuccess: { (todos) in
+            self.toDoItemText.text = ""
+            self.todos = todos.items
+            self.toDoTable.reloadData()
+        }) { (errorMessage) in
+            debugPrint(errorMessage)
+        }
     }
 }
