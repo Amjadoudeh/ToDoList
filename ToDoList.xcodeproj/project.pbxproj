@@ -19,6 +19,7 @@
 		D052E0E82882EAD6009B0C4B /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0E72882EAD6009B0C4B /* ToDoCell.swift */; };
 		D052E0EA28830160009B0C4B /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0E928830160009B0C4B /* ToDo.swift */; };
 		D052E0EC28830214009B0C4B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0EB28830214009B0C4B /* APIError.swift */; };
+		D052E0EF2883032D009B0C4B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052E0EE2883032D009B0C4B /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D052E0E72882EAD6009B0C4B /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		D052E0E928830160009B0C4B /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		D052E0EB28830214009B0C4B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D052E0EE2883032D009B0C4B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		D052E0792874251F009B0C4B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				D052E0ED2883030E009B0C4B /* Services */,
 				D052E0E62882EA6E009B0C4B /* Controller */,
 				D052E0E52882EA66009B0C4B /* View */,
 				D052E0E42882EA5F009B0C4B /* Model */,
@@ -158,6 +161,14 @@
 				D052E07E2874251F009B0C4B /* ToDoViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D052E0ED2883030E009B0C4B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D052E0EE2883032D009B0C4B /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				D052E07D2874251F009B0C4B /* SceneDelegate.swift in Sources */,
 				D052E0E82882EAD6009B0C4B /* ToDoCell.swift in Sources */,
 				D052E0EC28830214009B0C4B /* APIError.swift in Sources */,
+				D052E0EF2883032D009B0C4B /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
